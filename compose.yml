@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  ASL3:
+    container_name: ASL3
+    image: ghcr.io/mkmer/asl3-docker:latest
+    volumes:
+      - /etc/asterisk:/etc/asterisk
+      - /var/log/asterisk:/var/log/asterisk
+    devices:
+      - /dev/dbus/usb:/dev/dbus/usb
+      - /var/run/dbus:/var/run/dbus
+    envisonment:
+      - TZ=America/Detroit
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    ports:
+      - 4569:4569
+      - 1667:1667
+      - 667:667
+      - 5038:5038
