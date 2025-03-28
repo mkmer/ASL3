@@ -8,6 +8,6 @@ RUN cd /tmp && \
 wget https://repo.allstarlink.org/public/asl-apt-repos.deb12_all.deb && \
 sudo dpkg -i asl-apt-repos.deb12_all.deb && \
 sudo apt update && \
-sudo apt install asl3
+sudo apt install -y asl3
 
 ENV LANG en_US.utf8
