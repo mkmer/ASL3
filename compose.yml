@@ -9,10 +9,9 @@ services:
     devices:
       - /dev/dbus/usb:/dev/dbus/usb
       - /var/run/dbus:/var/run/dbus
-    envisonment:
+    environment:
       - TZ=America/Detroit
     restart: unless-stopped
-    network_mode: host
     privileged: true
     ports:
       - 4569:4569
