@@ -11,4 +11,4 @@ sudo apt update && \
 sudo apt install -y asl3
 
 ENV LANG en_US.utf8
-ENTRYPOINT [ "/sbin/asterisk","-r" ]
+ENTRYPOINT [ "/sbin/asterisk","-f" ]
