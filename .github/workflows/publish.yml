@@ -25,13 +25,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Get Version
+      - name: Build the Asterisk Docker Image
         run: |
           export VERSION=$(cat version.txt)
           echo "Version : $VERSION"
-
-      - name: Build the Asterisk Docker Image
-        run: |
           docker build --tag ghcr.io/mkmer/asl3-docker:$VERSION .
           docker image --tag ghcr.io/mkmer/asl3-docker:latest
           docker run ghcr.io/mkmer/asl3-docker:$VERSION
