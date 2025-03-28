@@ -30,7 +30,7 @@ jobs:
           export VERSION=$(cat version.txt)
           echo "Version : $VERSION"
           docker build --tag ghcr.io/mkmer/asl3-docker:$VERSION .
-          docker image --tag ghcr.io/mkmer/asl3-docker:latest
+          docker image -t ghcr.io/mkmer/asl3-docker:latest
           docker run ghcr.io/mkmer/asl3-docker:$VERSION
           docker push ghcr.io/mkmer/asl3-docker:$VERSION
         
